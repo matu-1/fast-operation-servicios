@@ -18,7 +18,7 @@ class OperacionController extends Controller
       $path = $path."/".rand()."_".time().".jpeg";    
       $img = str_replace('data:image/jpeg;base64,', '', $imagen);
       $img = str_replace(' ', '+', $img);
-      if(file_put_contents($path, base64_decode($img))){
+      if(file_put_contents(public_path().'/'.$path, base64_decode($img))){
 
         $client = new RekognitionClient([
             'version' => 'latest',
@@ -67,7 +67,7 @@ class OperacionController extends Controller
       }
     }
 
-    function validarCadena($texto) {
+    public function validarCadena($texto) {
       if(empty($texto)) return '';
       $cadena = str_replace(['s','S'], '5', $texto);
       $cadena = str_replace(['t', 'T'], '+', $cadena);
@@ -76,7 +76,7 @@ class OperacionController extends Controller
       return $cadena;
     }
 
-    function existenLetras($cadena){
+    public function existenLetras($cadena){
      // $patron1 = "/^[a-zA-Z]+$/";        //solo letras
       $patron2 = "/[a-zA-Z]/";        // existe letras
       if (preg_match($patron2, $cadena)) {
