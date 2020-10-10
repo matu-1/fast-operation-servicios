@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Exception;
 use Illuminate\Http\Response;
 use Aws\Rekognition\RekognitionClient;   /// este es el servicio utilizado de IA
-ini_set('max_execution_time', 240); //4 minutes
+ini_set('max_execution_time', 120); //2 minutes
 
 class OperacionController extends Controller
 {
