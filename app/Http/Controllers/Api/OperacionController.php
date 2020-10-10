@@ -25,8 +25,8 @@ class OperacionController extends Controller
             'version' => 'latest',
             'region'  => 'us-west-2',
             'credentials' => [
-                'key' => 'AKIAUZ7DNBSK3G6US5EO',
-                'secret' => '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'
+                'key' => 'key',
+                'secret' => 'secret'
             ]
         ]);
         
