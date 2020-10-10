@@ -35,7 +35,7 @@ class OperacionController extends Controller
                 'Bytes' =>file_get_contents($target_dir),
             ]
         ]);
-        $datos = $result->data()["TextDetections"];  ///   ( 5 + 5 ) / 5
+        $datos = $result["TextDetections"];  ///   ( 5 + 5 ) / 5
         $texto = $datos[0]["DetectedText"];
         $texto = $this->validarCadena($texto);
         $resul = '';
